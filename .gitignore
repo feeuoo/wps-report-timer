@@ -1,0 +1,8 @@
+bin/
+obj/
+src/*.exe
+*.user
+*.suo
+*.zip
+.DS_Store
+Thumbs.db

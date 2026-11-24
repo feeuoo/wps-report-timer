@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="OnAddinLoad">
+  <ribbon startFromScratch="false">
+    <tabs>
+      <tab id="WpsReportTimerToolsTab" label="工具">
+        <group id="WpsReportTimerGroup" label="报告演示">
+          <button id="btnStartWpsReportTimer"
+                  label="启动报告计时器"
+                  screentip="启动报告计时器"
+                  supertip="启动透明悬浮倒计时；进入 WPS 放映时自动开始，超时后显示 -0:00。"
+                  onAction="OnStartTimer" />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>

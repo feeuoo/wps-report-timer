@@ -306,7 +306,7 @@ namespace WpsReportTimer
                 ? Screen.FromHandle(slideShowHandle)
                 : Screen.FromPoint(Cursor.Position);
             Rectangle area = screen.Bounds;
-            Location = new Point(area.Right - Width - 24, area.Bottom - Height - 24);
+            Location = new Point(area.Right - Width - 24, area.Top + 24);
         }
 
         private void PauseClick(object sender, EventArgs e)

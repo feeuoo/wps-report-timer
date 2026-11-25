@@ -2,7 +2,7 @@
 <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="OnAddinLoad">
   <ribbon startFromScratch="false">
     <tabs>
-      <tab id="WpsReportTimerToolsTab" label="工具">
+      <tab idMso="TabDeveloper">
         <group id="WpsReportTimerGroup" label="报告演示">
           <button id="btnStartWpsReportTimer"
                   label="启动报告计时器"

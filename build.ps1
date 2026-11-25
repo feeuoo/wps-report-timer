@@ -8,7 +8,7 @@ if (-not (Test-Path $csc)) {
     throw 'C# compiler not found. Windows .NET Framework 4.x is required.'
 }
 
-$out = Join-Path $root 'WpsReportTimer_1.0.0\WpsReportTimer.exe'
+$out = Join-Path $root 'WpsReportTimer_1.0.1\WpsReportTimer.exe'
 & $csc /nologo /target:winexe /platform:anycpu /optimize+ /codepage:65001 `
     /out:$out `
     /reference:System.dll /reference:System.Core.dll /reference:System.Drawing.dll `

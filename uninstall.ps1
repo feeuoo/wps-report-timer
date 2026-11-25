@@ -4,9 +4,8 @@
 
 $ErrorActionPreference = 'Stop'
 $addonName = 'WpsReportTimer'
-$folderName = 'WpsReportTimer_1.0.0'
+$folderNames = @('WpsReportTimer_1.0.0', 'WpsReportTimer_1.0.1')
 $publishPath = Join-Path $TargetRoot 'publish.xml'
-$target = Join-Path $TargetRoot $folderName
 
 if (Test-Path $publishPath) {
     Copy-Item $publishPath ($publishPath + '.before-WpsReportTimer-uninstall.xml') -Force
@@ -25,7 +24,10 @@ if (Test-Path $publishPath) {
     $writer.Close()
 }
 
-if (Test-Path $target) {
-    Remove-Item -Path $target -Recurse -Force
+foreach ($folderName in $folderNames) {
+    $target = Join-Path $TargetRoot $folderName
+    if (Test-Path $target) {
+        Remove-Item -Path $target -Recurse -Force
+    }
 }
 Write-Output 'WPS 报告计时器加载项已卸载。请重启 WPS。'

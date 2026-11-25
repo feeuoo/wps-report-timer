@@ -4,7 +4,7 @@
 
 $ErrorActionPreference = 'Stop'
 $addonName = 'WpsReportTimer'
-$version = '1.0.0'
+$version = '1.0.1'
 $folderName = $addonName + '_' + $version
 $source = Join-Path $PSScriptRoot $folderName
 $target = Join-Path $TargetRoot $folderName
@@ -20,6 +20,10 @@ if (-not (Test-Path (Join-Path $source 'ribbon.xml'))) {
 New-Item -ItemType Directory -Force -Path $TargetRoot | Out-Null
 New-Item -ItemType Directory -Force -Path $target | Out-Null
 Copy-Item -Path (Join-Path $source '*') -Destination $target -Recurse -Force
+$legacyTarget = Join-Path $TargetRoot 'WpsReportTimer_1.0.0'
+if (Test-Path $legacyTarget) {
+    Remove-Item -Path $legacyTarget -Recurse -Force
+}
 
 if (Test-Path $publishPath) {
     Copy-Item $publishPath ($publishPath + '.before-WpsReportTimer.xml') -Force
